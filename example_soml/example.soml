@@ -1,0 +1,16 @@
+//.this is a comment in soml
+//.heading example
+H.soml example
+
+//.this a paragraph in soml
+P.this a soml example
+
+//.unordered list example
+P.list:
+UL.loaf
+UL.soap
+UL.bath-bomb
+
+//.code example
+P.code:
+C.print("Hello, World!)
