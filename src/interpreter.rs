@@ -8,8 +8,15 @@ pub fn interpret(tokens: Vec<Token>) {
             TokenType::Paragraph => println!("{}", token.text),
             TokenType::UnorderedList => println!("- {}", token.text),
             TokenType::Heading => {
-                let header = &token.text.trim_end();                
+                let header = &token.text.trim_end();
+                let header_length = header.len();
+                let mut line = String::new();
+                
+                for _character in 0..=header_length {
+                    line.push_str("_");
+                }
                 println!("{}", titlecase(header));
+                println!("{}", line);
             },
             TokenType::Code => {
                 let text_length = token.text.chars().count();
