@@ -1,6 +1,6 @@
 use crate::tokens::*;
 
-pub fn lex(file: String) -> Vec<Token> {
+pub fn lex(file: String) -> Result<Vec<Token>, String> {
     let mut tokens: Vec<Token> = Vec::new();
     
     for line in file.lines() {
@@ -49,10 +49,10 @@ pub fn lex(file: String) -> Vec<Token> {
                         text: String::from(parts[1]),
                     });
                 },
-                _ => panic!("unrecognized identifier."),
+                _ => return Err(String::from("unrecognized identifier")),
             }
         }
     }
 
-    tokens
+    Ok(tokens)
 }
