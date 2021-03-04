@@ -1,5 +1,6 @@
 use crate::tokens::*;
 use titlecase::titlecase;
+use crossterm::style::Styler;
 
 pub fn interpret(tokens: Vec<Token>) {
     for token in tokens {
@@ -31,6 +32,9 @@ pub fn interpret(tokens: Vec<Token>) {
                 println!("{}", &bound);
             },
             TokenType::Comment => (),
+            TokenType::BoldParagraph => {
+                println!("{}", token.text.bold());
+            },
         }
     }
 }

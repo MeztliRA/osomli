@@ -5,6 +5,7 @@ pub enum TokenType {
     Code,
     BlankLine,
     Comment,
+    BoldParagraph,
 }
 
 pub struct Token {

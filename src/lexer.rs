@@ -43,6 +43,12 @@ pub fn lex(file: String) -> Vec<Token> {
                         text: String::from(parts[1]),
                     });
                 },
+                "B" => {
+                    tokens.push(Token {
+                        identifier: TokenType::BoldParagraph,
+                        text: String::from(parts[1]),
+                    });
+                },
                 _ => panic!("unrecognized identifier."),
             }
         }
