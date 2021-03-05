@@ -51,7 +51,7 @@ pub fn lex(file: String) -> Result<Vec<Token>, String> {
                         text: String::from(parts[1]),
                     });
                 },
-                _ => return Err(String::from("unrecognized identifier")),
+                _ => return Err(format!("unrecognized identifier: {}", parts[0])),
             }
         }
     }
