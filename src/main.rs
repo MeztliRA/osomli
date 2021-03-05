@@ -16,7 +16,11 @@ fn main() -> Result<(), String> {
 
     let extension = OsStr::new("soml");
     
-    assert_eq!(&extension, &args.path.extension().unwrap(), "not a soml file.");
+    if args.path.extension().unwrap() == extension {
+        ()
+    } else {
+        return Err(String::from("not a soml file."));
+    }
 
     let file = match fs::read_to_string(&args.path) {
         Ok(data) => data,
