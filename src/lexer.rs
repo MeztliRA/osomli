@@ -4,7 +4,7 @@ pub fn lex(file: String) -> Result<Vec<Token>, String> {
     let mut tokens: Vec<Token> = Vec::new();
     
     for line in file.lines() {
-        let parts: Vec<&str> = line.split(".").collect();
+        let mut parts: Vec<&str> = line.split(".").collect();
 
         if line.is_empty() {
             tokens.push(Token {
@@ -12,6 +12,8 @@ pub fn lex(file: String) -> Result<Vec<Token>, String> {
                 text: String::from("\n"),
             });
         } else {
+            parts[0] = parts[0].trim();
+
             match parts[0] {
                 "H" => {
                     tokens.push(Token {

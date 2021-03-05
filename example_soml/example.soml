@@ -12,7 +12,7 @@ UL.soap
 UL.bath-bomb
 
 //.code example
-P.code:
+ P.code:
 C.print("Hello, World!)
 
 //.bold paragraph in soml
