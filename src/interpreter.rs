@@ -13,7 +13,7 @@ pub fn interpret(tokens: Vec<Token>) {
                 let header_length = header.len();
                 let mut line = String::new();
                 
-                for _character in 0..=header_length {
+                for _ in 0..=header_length {
                     line.push_str("_");
                 }
                 println!("{}", titlecase(header));
@@ -23,7 +23,7 @@ pub fn interpret(tokens: Vec<Token>) {
                 let text_length = token.text.chars().count();
                 let mut bound = String::new();
 
-                for _character in 0..=text_length {
+                for _ in 0..=text_length {
                     bound.push_str("_");
                 }
 
